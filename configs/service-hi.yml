@@ -1,0 +1,47 @@
+server:
+  port: 9000
+  
+spring:
+  application:
+    name: service-hi
+     
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      #defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/,http://localhost:8763/eureka/
+
+
+---
+spring:
+  profiles: peer1
+  application:
+    name: service-hi
+server:
+  port: 9000
+     
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      #defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/,http://localhost:8763/eureka/
+      
+---
+spring:
+  profiles: peer1
+  application:
+    name: service-hi      
+server:
+  port: 9001
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      #defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/,http://localhost:8763/eureka/            
